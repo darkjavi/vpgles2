@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/graph_beziers.png</file>
+        <file>icons/graph_dots.png</file>
+        <file>icons/graph_lines.png</file>
+        <file>icons/save_csv.png</file>
+        <file>icons/save_png.png</file>
+        <file>icons/add.png</file>
+        <file>icons/del.png</file>
+        <file>icons/graph_1D.png</file>
+        <file>icons/graph_2D.png</file>
+        <file>icons/graph_3D.png</file>
+        <file>icons/error.png</file>
+        <file>icons/loading.png</file>
+        <file>icons/loading.jpg</file>
+        <file>icons/data_mindflex.png</file>
+        <file>icons/delete_key.png</file>
+        <file>icons/record.png</file>
+    </qresource>
+</RCC>

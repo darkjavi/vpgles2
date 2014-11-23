@@ -83,7 +83,7 @@ void vpGLES2Scene::load_texture(QString id)
 
 void vpGLES2Scene::set_tex_handle(QString tex_id, uint tex_handle)
 {
-    //qDebug() << "vpGLES2Scene::set_tex_handle-->Recibida textura:" << tex_id << tex_handle ;
+    qDebug() << "vpGLES2Scene::set_tex_handle-->Recibida textura:" << tex_id << tex_handle ;
     emit texture_available(tex_id,tex_handle);
 }
 

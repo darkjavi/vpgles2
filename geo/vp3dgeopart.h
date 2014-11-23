@@ -4,7 +4,7 @@
 #include <QVector>
 #include <QVector3D>
 #include <QVector2D>
-#include <QtOpenGL>
+#include <QtOpenGL/QtOpenGL>
 
 class vp3DGeoPart
 {

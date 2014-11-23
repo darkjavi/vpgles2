@@ -15,6 +15,7 @@ vpGLES2Widget::vpGLES2Widget(QWidget *parent) : QGLWidget(parent)
     setMouseTracking(true);
 
     m_time.start();
+    m_hudEnabled =false;
 
 }
 
@@ -56,6 +57,8 @@ void vpGLES2Widget::initializeGL()
     connect(&m_camera,SIGNAL(camera_updated()),this,SLOT(updateGL()));
     connect(&m_hud,SIGNAL(updated()),&m_camera,SLOT(update()));
     //m_scene.add_ojb(m_camera.camera_representation());
+    m_camera.look_at(QVector3D(0,0,0));
+    //m_camera.set_movemode_arround(m_scene.objects().first());
 }
 
 void vpGLES2Widget::paintGL()
@@ -83,8 +86,8 @@ void vpGLES2Widget::paintGL()
         //Dibujamos el 2d
         glDisable(GL_DEPTH_TEST);
         painter.endNativePainting();
-        //m_scene.draw2D(&painter);
-        m_hud.draw(painter);
+        m_scene.draw2D(&painter);
+        if(m_hudEnabled)m_hud.draw(painter);
         qreal fps = m_frames /(m_time.elapsed() / 1000.0);
 
         if(m_show_debug)
@@ -207,14 +210,14 @@ void vpGLES2Widget::keyPressEvent(QKeyEvent *event)
 
 void vpGLES2Widget::mouseMoveEvent(QMouseEvent *event)
 {
-    //m_camera.mouseMoveEvent(event);
-    m_hud.mouse_in(event);
+    m_camera.mouseMoveEvent(event);
+    //m_hud.mouse_in(event);
 }
 
 void vpGLES2Widget::mousePressEvent(QMouseEvent *event)
 {
-    //m_camera.mousePressEvent(event);
-    m_hud.mouse_in(event);
+    m_camera.mousePressEvent(event);
+    //m_hud.mouse_in(event);
 }
 
 void vpGLES2Widget::wheelEvent(QWheelEvent *event)

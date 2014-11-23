@@ -6,8 +6,8 @@
 #include "vp3dgeoprimitive.h"
 #include "vp3dgeocamera.h"
 
-#include "vp3dgeodataobj.h"
-#include "vp3dgeograph.h"
+//#include "vp3dgeodataobj.h"
+//#include "vp3dgeograph.h"
 
 class vp3DGeoTools
 {
@@ -21,8 +21,8 @@ public:
 
         } else if (obj->type() == vp3DGeoObj::TypeGraph)
         {
-            vp3DGeoGraph* aux = (vp3DGeoGraph*) obj;
-            delete aux;
+//            vp3DGeoGraph* aux = (vp3DGeoGraph*) obj; //Comentado para poder compilar sin los data obj, solo la parte geometrica
+//            delete aux;
         }
         else if (obj->type() == vp3DGeoObj::TypePrimitive)
         {

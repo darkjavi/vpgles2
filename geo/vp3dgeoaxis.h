@@ -6,7 +6,7 @@
 class vp3DGeoAxis : public vp3DGeoObj
 {
 public:
-    vp3DGeoAxis(QVector3D pos = QVector3D(0,0,0),QVector3D size = QVector3D(100,100,100), qreal div_size = 50);
+    vp3DGeoAxis(QVector3D pos = QVector3D(0,0,0),QVector3D size = QVector3D(400,400,400), qreal div_size = 10);
 protected:
     qreal m_div_size;
     QVector3D get_center();

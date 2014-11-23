@@ -6,7 +6,7 @@
 
 QT       += core gui opengl network
 
-INCLUDEPATH += ViewportGLES2 bt ViewportGLES2/data ViewportGLES2/geo ViewportGLES2/gl ViewportGLES2/widgets
+INCLUDEPATH += vpgles2 ViewportGLES2 bt ViewportGLES2/data ViewportGLES2/geo ViewportGLES2/gl ViewportGLES2/widgets
 
 include(qserialport/serialport-lib.pri)
 

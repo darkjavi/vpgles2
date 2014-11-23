@@ -5,11 +5,11 @@ vpTCamera::vpTCamera(QObject *parent) :
 {
     m_cam_target = 0;
     m_cam_modulus = 20;
-    m_cam_pos  = QVector3D(1000,500,1300);
+    m_cam_pos  = QVector3D(400,100,200);
     m_cam_alpha_rotation = ALPHA_OFFSET;
     m_cam_beta_rotation  = BETA_OFFSET;
     m_cam_up            = QVector3D(0,1,0);
-    m_cam_fov           = 30;
+    m_cam_fov           = 65;
     m_cam_nearPlane     = 0.1;
     m_cam_farPlane      = 10000;
     m_cam_aspectRatio   = 800.0/600.0;
@@ -253,12 +253,13 @@ void vpTCamera::focus_object(vp3DGeoObj* obj, QVector3D face)
 qreal vpTCamera::framing_distance(qreal obj_size)
 {
     //qreal distance = (obj_size)/tan(m_cam_fov);
-    qreal distance = obj_size * 0.1;
+    qreal distance = obj_size * 2;
     return distance;
 }
 
 void vpTCamera::look_at(QVector3D target)
 {
+    qDebug() << "[INFO]vpTCamera::look_at-> Looking at:" << target;
     //qDebug() << "[INFO]vpTCamera::look_at:" << target;
     m_cam_modulus = QVector3D(target - m_cam_pos).length();
     //qreal n_beta  =  acos( (target.y()- m_cam_pos.y()) / m_cam_modulus );

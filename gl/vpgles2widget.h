@@ -56,6 +56,7 @@ private:
     vpTCamera       m_camera;
     vpGLES2Scene    m_scene;
     vpHud           m_hud;
+    bool            m_hudEnabled;
 
     QMutex m_render_lock;
 

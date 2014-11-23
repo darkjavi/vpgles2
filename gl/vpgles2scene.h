@@ -4,7 +4,7 @@
 #include <QThread>
 #include <QMutex>
 
-#include "vp3dgeoincludes.h"
+#include "vpgles2/geo/vp3dgeoincludes.h"
 
 class vpGLES2Scene : public QThread
 {
@@ -15,6 +15,7 @@ public:
     QVector4D draw3D(vpgles2Shader* shader);
     ulong draw2D(QPainter* p);
     void  add_ojb(vp3DGeoObj* n_obj);
+    QVector<vp3DGeoObj*> objects() {return m_render_pool;}
     void  clear(bool purge_objs = true);
 protected:
     QVector<vp3DGeoObj*>    m_render_pool;

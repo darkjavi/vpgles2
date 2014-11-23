@@ -50,5 +50,6 @@ void vpHud::mouse_in(QMouseEvent* event)
     if( ! event->isAccepted() )
     {
         emit mouse_out(event);
+        qDebug() << "event out!";
     }
 }
